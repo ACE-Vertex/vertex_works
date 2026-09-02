@@ -1,0 +1,26 @@
+{
+  "product": "VERTEX WORKS",
+  "version": "0.5.0",
+  "feature": "VERTEX RAY / SCOPED X-RAY / VERA HANDOFF",
+  "release_policy": "IMMUTABLE_BUILD_PATH",
+  "release_exe": "G:\\Vertex_Project\\Development\\vertex_works\\versions\\0.5.0\\builds\\20260903-045036\\VertexWorks_0.5.0.exe",
+  "sha256": "f801c98bb518c277bd970809778c7ff18104d34ca0ae80797bee3ad318375f39",
+  "aliases": {
+    "stable_alias": {
+      "state": "LOCKED_PENDING",
+      "path": "G:\\Vertex_Project\\Development\\vertex_works\\VertexWorks.exe",
+      "pending": "G:\\Vertex_Project\\Development\\vertex_works\\VertexWorks.exe.20260903-045036.pending",
+      "error": "[WinError 5] アクセスが拒否されました。: 'G:\\\\Vertex_Project\\\\Development\\\\vertex_works\\\\VertexWorks.exe.20260903-045036.pending' -> 'G:\\\\Vertex_Project\\\\Development\\\\vertex_works\\\\VertexWorks.exe'"
+    },
+    "legacy_version_alias": {
+      "state": "UPDATED",
+      "path": "G:\\Vertex_Project\\Development\\vertex_works\\VertexWorks_0.5.0.exe"
+    },
+    "version_alias": {
+      "state": "UPDATED",
+      "path": "G:\\Vertex_Project\\Development\\vertex_works\\versions\\0.5.0\\VertexWorks_0.5.0.exe"
+    }
+  },
+  "timestamp_unix": 1788378636,
+  "build_stamp": "20260903-045036"
+}

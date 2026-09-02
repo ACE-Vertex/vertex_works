@@ -1,0 +1,19 @@
+{
+  "schema": "vertex-works/product-identity/1",
+  "product": "VERTEX WORKS",
+  "product_code": "VW",
+  "theme": {
+    "accent": "ORANGE",
+    "surface": "DEEP_BLACK",
+    "workspace": "ORANGE_ACCENT"
+  },
+  "language_policy": "ENGLISH_ONLY",
+  "localization_policy": "REMOVE_RUNTIME_LOCALIZATION_LAYER",
+  "responsive_policy": "NO_LOCALIZATION_REFLOW_OVERHEAD",
+  "single_entry": "VertexWorks.exe",
+  "brand_assets": {
+    "app_icon": "ui/assets/brand/vertex-works-app-icon.png",
+    "wordmark": "ui/assets/brand/vertex-works-wordmark.png"
+  },
+  "phase": "BRAND_FOUNDATION_AND_SOURCE_CAPTURE"
+}

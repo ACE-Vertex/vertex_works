@@ -1,0 +1,109 @@
+/*
+ * Vertex FM ENGINE — Default Color Palette
+ * Theme: Vertex Blue
+ *
+ * This file is a portable export of the application's default colors.
+ * Apply `data-theme="vertex"` to the root element when theme switching is used.
+ */
+
+:root,
+:root[data-theme="vertex"] {
+  color-scheme: dark;
+
+  /* Backgrounds */
+  --vertex-bg-deep: #070b10;
+  --vertex-bg-shell: #060a0f;
+  --vertex-bg-panel: #0c121a;
+  --vertex-bg-panel-raised: #111923;
+  --vertex-bg-inset: #080d13;
+  --vertex-bg-hover: #14202c;
+
+  /* Borders and separators */
+  --vertex-line: #1c2935;
+  --vertex-line-bright: #26394b;
+
+  /* Typography */
+  --vertex-text: #cbd5df;
+  --vertex-text-muted: #718195;
+  --vertex-text-faint: #455364;
+
+  /* Brand accent */
+  --vertex-accent: #168cff;
+  --vertex-accent-bright: #3ab8ff;
+  --vertex-accent-soft: #102c44;
+  --vertex-accent-rgb: 22, 140, 255;
+
+  /* Chrome gradients */
+  --vertex-header-top: #111923;
+  --vertex-header-bottom: #0b1118;
+  --vertex-status-top: #0c2940;
+  --vertex-status-bottom: #092035;
+
+  /* Semantic states */
+  --vertex-success: #55d69e;
+  --vertex-warning: #f1b85b;
+  --vertex-danger: #ff6f7c;
+
+  /* Existing Vertex FM ENGINE variable names */
+  --bg-deep: var(--vertex-bg-deep);
+  --bg-shell: var(--vertex-bg-shell);
+  --bg-panel: var(--vertex-bg-panel);
+  --bg-panel-raised: var(--vertex-bg-panel-raised);
+  --bg-inset: var(--vertex-bg-inset);
+  --bg-hover: var(--vertex-bg-hover);
+  --line: var(--vertex-line);
+  --line-bright: var(--vertex-line-bright);
+  --text: var(--vertex-text);
+  --muted: var(--vertex-text-muted);
+  --faint: var(--vertex-text-faint);
+  --blue: var(--vertex-accent);
+  --blue-bright: var(--vertex-accent-bright);
+  --blue-soft: var(--vertex-accent-soft);
+  --accent: var(--vertex-accent);
+  --accent-rgb: var(--vertex-accent-rgb);
+  --header-top: var(--vertex-header-top);
+  --header-bottom: var(--vertex-header-bottom);
+  --status-top: var(--vertex-status-top);
+  --status-bottom: var(--vertex-status-bottom);
+  --green: var(--vertex-success);
+  --amber: var(--vertex-warning);
+  --red: var(--vertex-danger);
+}
+
+/* Optional base application */
+.vertex-fm-theme {
+  color: var(--vertex-text);
+  background:
+    radial-gradient(
+      circle at 65% -30%,
+      rgba(var(--vertex-accent-rgb), 0.12),
+      transparent 42%
+    ),
+    var(--vertex-bg-deep);
+}
+
+.vertex-fm-theme .surface {
+  border: 1px solid var(--vertex-line);
+  background: var(--vertex-bg-panel);
+}
+
+.vertex-fm-theme .surface-raised {
+  border-color: var(--vertex-line-bright);
+  background: var(--vertex-bg-panel-raised);
+}
+
+.vertex-fm-theme .accent {
+  color: var(--vertex-accent-bright);
+}
+
+.vertex-fm-theme .status-success {
+  color: var(--vertex-success);
+}
+
+.vertex-fm-theme .status-warning {
+  color: var(--vertex-warning);
+}
+
+.vertex-fm-theme .status-danger {
+  color: var(--vertex-danger);
+}

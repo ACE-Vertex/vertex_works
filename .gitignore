@@ -1,0 +1,45 @@
+# >>> VERTEX SOURCE REPOSITORY SAFETY >>>
+# Build/cache/runtime output
+target/
+**/target/
+node_modules/
+**/node_modules/
+dist/
+build/
+.vite/
+.tauri/
+versions/
+MIGRATION_BACKUPS/
+
+# Generated/release binaries
+*.exe
+*.dll
+*.pdb
+*.msi
+*.msix
+*.appx
+*.dmg
+*.pkg
+*.pending
+
+# Local logs/temp
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# Local secrets / credentials
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+credentials.json
+secrets.json
+# <<< VERTEX SOURCE REPOSITORY SAFETY <<<

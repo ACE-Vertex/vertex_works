@@ -1,0 +1,267 @@
+/* VERTEX_WORKS_TYPOGRAPHY_PLUS1PT_000096: every explicit simple font-size in this file is +1pt */
+/* VERTEX WORKS 000087 — RAY ORANGE / RELATION MAP CONTRACT */
+
+#xrayWorkspace {
+  --vw-ray-accent: #ff8a2a;
+  --vw-ray-accent-hi: #ffad62;
+  --vw-ray-accent-soft: rgba(255, 138, 42, .10);
+  --vw-ray-accent-line: rgba(255, 138, 42, .24);
+  --vw-ray-edge: rgba(255, 138, 42, .14);
+  --vw-ray-surface: #090806;
+  --vw-ray-surface-2: #0d0a08;
+  --vw-ray-text: #ded2c7;
+  --vw-ray-muted: #78685b;
+
+  background:
+    radial-gradient(circle at 50% -15%, rgba(255, 125, 24, .055), transparent 34%),
+    #050505 !important;
+  color: var(--vw-ray-text);
+}
+
+/* VW product chrome is orange. Semantic pass/fail/relation types are not globally recolored. */
+#xrayWorkspace .xray-topbar,
+#xrayWorkspace .xray-panel,
+#xrayWorkspace .relation-inspector,
+#xrayWorkspace .relation-editor,
+#xrayWorkspace .ray-findings-section {
+  border-color: var(--vw-ray-edge) !important;
+  background:
+    linear-gradient(180deg, rgba(255, 138, 42, .018), transparent 42%),
+    var(--vw-ray-surface) !important;
+  box-shadow: none !important;
+}
+
+#xrayWorkspace .xray-panel-head {
+  border-color: rgba(255, 138, 42, .10) !important;
+}
+
+#xrayWorkspace .xray-panel-head small,
+#xrayWorkspace .xray-brand small,
+#xrayWorkspace .xray-brand span {
+  color: #8b6b52 !important;
+}
+
+#xrayWorkspace .xray-panel-head h2,
+#xrayWorkspace .xray-brand strong {
+  color: #e6d9ce !important;
+}
+
+#xrayWorkspace .xray-button.primary,
+#xrayWorkspace #blueprintAddRelationBtn {
+  border-color: rgba(255, 138, 42, .42) !important;
+  background: rgba(255, 138, 42, .08) !important;
+  color: #ffc18b !important;
+}
+
+#xrayWorkspace .xray-button.primary:hover,
+#xrayWorkspace #blueprintAddRelationBtn:hover {
+  border-color: rgba(255, 138, 42, .72) !important;
+  background: rgba(255, 138, 42, .13) !important;
+}
+
+#xrayWorkspace .xray-chip {
+  border-color: rgba(255, 138, 42, .12);
+  background: #080706;
+  color: #77695f;
+}
+
+#xrayWorkspace .xray-chip:hover,
+#xrayWorkspace .xray-chip.active {
+  border-color: rgba(255, 138, 42, .42);
+  color: #ffb16c;
+  background: rgba(255, 138, 42, .07);
+}
+
+#xrayWorkspace .blueprint-link-notice {
+  border-color: rgba(255, 138, 42, .34) !important;
+  background: rgba(255, 138, 42, .065) !important;
+}
+
+#xrayWorkspace #xrayMap {
+  position: relative;
+  background-color: #060606 !important;
+  background-image:
+    linear-gradient(rgba(255, 138, 42, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 138, 42, .035) 1px, transparent 1px) !important;
+  background-size: 28px 28px !important;
+  border-color: rgba(255, 138, 42, .10) !important;
+}
+
+/*
+  The grid is visual topology guidance only.
+  This phase does NOT claim a layout editor: drag/snap remain disabled.
+*/
+#xrayWorkspace #xrayMap[data-mode="relation-map"]::after {
+  content: "AUTO-LAYOUT RELATION MAP  /  GRID EDITOR OFF";
+  position: absolute;
+  right: 9px;
+  bottom: 7px;
+  pointer-events: none;
+  color: rgba(255, 153, 69, .34);
+  font: 700 7px/1 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .13em;
+}
+
+#xrayWorkspace #xrayMap .vw-relation-node {
+  border-radius: 3px !important;
+  border-color: rgba(255, 138, 42, .18) !important;
+  background: #0a0908 !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  user-select: none;
+}
+
+/* Capability contract: make non-editor status explicit. */
+.vw-ray-contract {
+  margin-left: auto;
+  display: flex;
+  align-items: stretch;
+  gap: 5px;
+  min-width: 0;
+}
+
+.vw-ray-contract-title,
+.vw-ray-contract-cell {
+  display: grid;
+  align-content: center;
+  min-width: 104px;
+  padding: 4px 8px;
+  border: 1px solid rgba(255, 138, 42, .10);
+  border-radius: 4px;
+  background: #080706;
+}
+
+.vw-ray-contract small {
+  color: #745c49;
+  font-size: calc(6px + 1pt);
+  letter-spacing: .13em;
+}
+
+.vw-ray-contract b {
+  margin-top: 2px;
+  color: #c7b6a8;
+  font-size: calc(8px + 1pt);
+  letter-spacing: .09em;
+}
+
+.vw-ray-contract em {
+  margin-top: 2px;
+  color: #554b43;
+  font-size: calc(6px + 1pt);
+  font-style: normal;
+  letter-spacing: .05em;
+  white-space: nowrap;
+}
+
+#vwRayRelationMaster[data-state*="live"],
+#vwRayRelationMaster[data-state*="dispatch"] {
+  color: #ff9a42;
+}
+
+#vwRayRelationTestBtn {
+  min-width: 108px;
+  border: 1px solid rgba(255, 138, 42, .28);
+  border-radius: 4px;
+  background: rgba(255, 138, 42, .055);
+  color: #ad8463;
+  font-size: calc(7px + 1pt);
+  font-weight: 800;
+  letter-spacing: .08em;
+  cursor: pointer;
+}
+
+#vwRayRelationTestBtn:hover {
+  border-color: rgba(255, 138, 42, .56);
+  color: #ffc28e;
+}
+
+.vw-ray-relation-diag {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+  margin: 0 0 9px;
+  padding: 8px;
+  border: 1px solid rgba(255, 138, 42, .12);
+  border-radius: 5px;
+  background: #070706;
+}
+
+.vw-ray-relation-diag header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 138, 42, .08);
+}
+
+.vw-ray-relation-diag header small {
+  color: #745c49;
+  font-size: calc(6px + 1pt);
+  letter-spacing: .13em;
+}
+
+.vw-ray-relation-diag header b {
+  color: #c7b6a8;
+  font-size: calc(8px + 1pt);
+}
+
+.vw-ray-relation-diag > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  padding: 5px 6px;
+  border: 1px solid rgba(255,255,255,.035);
+  background: #090807;
+}
+
+.vw-ray-relation-diag span {
+  color: #655a50;
+  font-size: calc(7px + 1pt);
+}
+
+.vw-ray-relation-diag b {
+  color: #a9917e;
+  font-size: calc(7px + 1pt);
+}
+
+.vw-ray-relation-diag p {
+  grid-column: 1 / -1;
+  margin: 2px 0 0;
+  color: #544a43;
+  font-size: calc(7px + 1pt);
+  line-height: 1.35;
+}
+
+/* Scoped X-Ray belongs to RAY, not a separate cyan product. Keep error/health semantics intact. */
+.vx-sx-menu,
+.vx-sx-overlay {
+  --vx-forge-cyan: #ff8a2a;
+  --vx-forge-cyan-soft: rgba(255, 138, 42, .10);
+  --vx-forge-cyan-line: rgba(255, 138, 42, .22);
+  --vx-forge-edge: #241a13;
+  --vx-forge-edge-strong: #3a281c;
+}
+
+@media (max-width: 1700px) {
+  .vw-ray-contract-cell em,
+  .vw-ray-contract-title small {
+    display: none;
+  }
+
+  .vw-ray-contract-title,
+  .vw-ray-contract-cell {
+    min-width: 72px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .vw-ray-contract {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .vw-ray-contract-title {
+    display: none;
+  }
+}

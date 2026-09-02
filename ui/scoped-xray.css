@@ -1,0 +1,369 @@
+/* VERTEX_WORKS_TYPOGRAPHY_PLUS1PT_000096: every explicit simple font-size in this file is +1pt */
+/* ==========================================================================
+   VERTEX WORKS 0.5.0
+   VERTEX RAY — FORGE UNIFIED DARK UI / 000054
+   Design contract:
+   - Ray and FORGE belong to one manufacturing facility.
+   - Near-black structural surfaces; cyan is signal, never ambient floodlight.
+   - Dense industrial geometry, restrained radius, thin borders.
+   - Report surface behaves like an engineering terminal/evidence viewport.
+   ========================================================================== */
+
+:root{
+  --vx-forge-void:#010305;
+  --vx-forge-bg:#030609;
+  --vx-forge-surface:#050a0f;
+  --vx-forge-surface-2:#071019;
+  --vx-forge-surface-3:#09141d;
+  --vx-forge-edge:#13212b;
+  --vx-forge-edge-strong:#1b3443;
+  --vx-forge-text:#c7d2da;
+  --vx-forge-text-2:#8195a3;
+  --vx-forge-text-3:#50616e;
+  --vx-forge-cyan:#38bde8;
+  --vx-forge-cyan-soft:rgba(56,189,232,.10);
+  --vx-forge-cyan-line:rgba(56,189,232,.22);
+  --vx-forge-green:#65c99a;
+  --vx-forge-red:#da6973;
+  --vx-forge-amber:#d2a35d;
+  --vx-forge-shadow:0 24px 72px rgba(0,0,0,.72);
+  --vx-forge-mono:"Cascadia Mono","JetBrains Mono",Consolas,monospace;
+  --vx-forge-sans:Inter,"Segoe UI Variable","Segoe UI",system-ui,sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   Scoped context menu
+   -------------------------------------------------------------------------- */
+.vx-sx-menu{
+  position:fixed;
+  z-index:12000;
+  width:332px;
+  padding:5px;
+  border:1px solid var(--vx-forge-edge-strong);
+  border-radius:6px;
+  background:rgba(3,7,11,.988);
+  box-shadow:var(--vx-forge-shadow),0 0 0 1px rgba(255,255,255,.012) inset;
+  backdrop-filter:blur(10px);
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(-3px) scale(.992);
+  transition:opacity .11s ease,transform .11s ease;
+  color:var(--vx-forge-text);
+  font-family:var(--vx-forge-sans);
+}
+.vx-sx-menu::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--vx-forge-cyan),transparent);
+  opacity:.46;
+  pointer-events:none;
+}
+.vx-sx-menu.open{opacity:1;pointer-events:auto;transform:none}
+.vx-sx-menu.error{border-color:rgba(218,105,115,.34)}
+
+.vx-sx-menu-head{
+  padding:8px 9px 9px;
+  border-bottom:1px solid var(--vx-forge-edge);
+  margin-bottom:3px;
+  background:linear-gradient(180deg,rgba(255,255,255,.012),transparent);
+}
+.vx-sx-menu-head span{
+  display:block;
+  color:var(--vx-forge-cyan);
+  font:600 8px/1.2 var(--vx-forge-mono);
+  letter-spacing:.19em;
+  opacity:.88;
+}
+.vx-sx-menu-head b{
+  display:block;
+  margin-top:4px;
+  color:#d5dde2;
+  font:600 12px/1.25 var(--vx-forge-sans);
+  letter-spacing:.055em;
+}
+.vx-sx-menu-head small{
+  display:block;
+  margin-top:5px;
+  color:var(--vx-forge-text-3);
+  font:9px/1.25 var(--vx-forge-mono);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.vx-sx-menu>button{
+  width:100%;
+  min-height:43px;
+  display:grid;
+  grid-template-columns:27px minmax(0,1fr);
+  gap:8px;
+  align-items:center;
+  border:1px solid transparent;
+  border-radius:4px;
+  background:transparent;
+  color:var(--vx-forge-text-2);
+  padding:6px 8px;
+  text-align:left;
+  cursor:pointer;
+  transition:background .10s ease,border-color .10s ease,color .10s ease;
+}
+.vx-sx-menu>button:hover{
+  background:rgba(56,189,232,.055);
+  border-color:rgba(56,189,232,.12);
+  color:#d8e2e8;
+}
+.vx-sx-menu>button:active{transform:translateY(1px)}
+.vx-sx-menu>button:disabled{opacity:.28;cursor:not-allowed;transform:none}
+.vx-sx-menu>button>span{
+  display:grid;
+  place-items:center;
+  width:24px;
+  height:24px;
+  border:1px solid var(--vx-forge-edge);
+  border-radius:3px;
+  background:#03070a;
+  color:#5d899c;
+  font:11px var(--vx-forge-mono);
+}
+.vx-sx-menu>button:hover>span{
+  border-color:var(--vx-forge-cyan-line);
+  color:var(--vx-forge-cyan);
+}
+.vx-sx-menu button b,.vx-sx-menu button small{display:block}
+.vx-sx-menu button b{
+  color:inherit;
+  font:600 9px/1.25 var(--vx-forge-sans);
+  letter-spacing:.07em;
+}
+.vx-sx-menu button small{
+  margin-top:3px;
+  color:var(--vx-forge-text-3);
+  font:8px/1.2 var(--vx-forge-mono);
+}
+
+/* --------------------------------------------------------------------------
+   Scoped Ray report surface — same chassis language as FORGE
+   -------------------------------------------------------------------------- */
+.vx-sx-overlay{
+  position:fixed;
+  z-index:11900;
+  inset:0;
+  background:rgba(0,2,4,.84);
+  backdrop-filter:blur(3px);
+  display:grid;
+  place-items:center;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .14s ease;
+}
+.vx-sx-overlay.open{opacity:1;pointer-events:auto}
+
+.vx-sx-card{
+  position:relative;
+  width:min(1500px,92vw);
+  height:min(900px,89vh);
+  display:grid;
+  grid-template-rows:56px 37px minmax(0,1fr);
+  border:1px solid var(--vx-forge-edge-strong);
+  border-radius:6px;
+  overflow:hidden;
+  background:var(--vx-forge-bg);
+  box-shadow:0 36px 110px rgba(0,0,0,.78),0 0 0 1px rgba(255,255,255,.01) inset;
+}
+.vx-sx-card::before{
+  content:"";
+  position:absolute;
+  z-index:2;
+  inset:0 0 auto;
+  height:1px;
+  background:linear-gradient(90deg,transparent 4%,var(--vx-forge-cyan) 28%,rgba(56,189,232,.18) 72%,transparent 96%);
+  opacity:.50;
+  pointer-events:none;
+}
+.vx-sx-card header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-width:0;
+  padding:7px 10px 7px 13px;
+  border-bottom:1px solid var(--vx-forge-edge);
+  background:#050a0f;
+}
+.vx-sx-card header>div:first-child{min-width:0}
+.vx-sx-card header small{
+  display:block;
+  color:#5f889a;
+  font:600 8px/1.1 var(--vx-forge-mono);
+  letter-spacing:.18em;
+}
+.vx-sx-card header h2{
+  margin:4px 0 0;
+  color:#d3dce1;
+  font:600 13px/1.1 var(--vx-forge-sans);
+  letter-spacing:.055em;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.vx-sx-actions{display:flex;gap:5px;align-items:center}
+.vx-sx-actions button{
+  height:30px;
+  border:1px solid var(--vx-forge-edge);
+  border-radius:3px;
+  background:#03070a;
+  color:#718998;
+  padding:0 10px;
+  font:600 8px/1 var(--vx-forge-mono);
+  letter-spacing:.06em;
+  cursor:pointer;
+  transition:border-color .10s ease,color .10s ease,background .10s ease;
+}
+.vx-sx-actions button:hover{
+  color:#bfd1dc;
+  border-color:#244252;
+  background:#071017;
+}
+.vx-sx-actions .primary{
+  color:#85cfe9;
+  border-color:rgba(56,189,232,.28);
+  background:rgba(56,189,232,.055);
+  box-shadow:none;
+}
+.vx-sx-actions .primary:hover{
+  color:#c0edf9;
+  border-color:rgba(56,189,232,.46);
+  background:rgba(56,189,232,.085);
+}
+.vx-sx-actions #vxSxClose{
+  width:30px;
+  padding:0;
+  color:#677986;
+  font:16px/1 var(--vx-forge-sans);
+}
+
+.vx-sx-meta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  min-width:0;
+  padding:5px 13px;
+  border-bottom:1px solid #0e1a22;
+  background:#03070a;
+  color:var(--vx-forge-text-3);
+  font:8px/1.2 var(--vx-forge-mono);
+  white-space:nowrap;
+  overflow:hidden;
+}
+.vx-sx-meta b{
+  color:#8ea5b2;
+  font-weight:500;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.vx-sx-meta span{overflow:hidden;text-overflow:ellipsis}
+.vx-sx-copied{color:var(--vx-forge-green);letter-spacing:.08em}
+
+#vxSxReport{
+  margin:0;
+  padding:14px 16px 20px;
+  overflow:auto;
+  background:
+    linear-gradient(rgba(255,255,255,.008) 1px,transparent 1px) 0 0/100% 24px,
+    #010407;
+  color:#7d929f;
+  font:10px/1.58 var(--vx-forge-mono);
+  white-space:pre-wrap;
+  scrollbar-width:thin;
+  scrollbar-color:#172833 #020508;
+}
+#vxSxReport::selection{background:rgba(56,189,232,.18);color:#dce8ee}
+#vxSxReport::-webkit-scrollbar{width:8px;height:8px}
+#vxSxReport::-webkit-scrollbar-track{background:#020508}
+#vxSxReport::-webkit-scrollbar-thumb{background:#142530;border:2px solid #020508;border-radius:8px}
+
+/* --------------------------------------------------------------------------
+   Global Project X-Ray visual normalization.
+   These are intentionally tolerant selectors: they only activate where the
+   main 0.4+/0.5+ Project X-Ray DOM exposes xray/ray workspace identifiers.
+   They do not alter FORGE itself.
+   -------------------------------------------------------------------------- */
+:is(
+  [data-workspace="xray"],
+  [data-workspace="ray"],
+  [id*="xrayWorkspace" i],
+  [id*="rayWorkspace" i],
+  [class*="xray-workspace" i],
+  [class*="ray-workspace" i]
+){
+  --ray-bg:var(--vx-forge-bg);
+  --ray-panel:var(--vx-forge-surface);
+  --ray-edge:var(--vx-forge-edge);
+  background:var(--vx-forge-bg) !important;
+  color:var(--vx-forge-text) !important;
+}
+
+:is(
+  [data-workspace="xray"],
+  [data-workspace="ray"],
+  [id*="xrayWorkspace" i],
+  [id*="rayWorkspace" i],
+  [class*="xray-workspace" i],
+  [class*="ray-workspace" i]
+) :is(
+  section,aside,
+  [class*="panel" i],
+  [class*="card" i],
+  [class*="lane" i],
+  [class*="explorer" i],
+  [class*="blueprint" i]
+){
+  border-color:var(--vx-forge-edge) !important;
+  box-shadow:none !important;
+}
+
+:is(
+  [data-workspace="xray"],
+  [data-workspace="ray"],
+  [id*="xrayWorkspace" i],
+  [id*="rayWorkspace" i],
+  [class*="xray-workspace" i],
+  [class*="ray-workspace" i]
+) :is(button,[role="button"]){
+  box-shadow:none !important;
+}
+
+:is(
+  [data-workspace="xray"],
+  [data-workspace="ray"],
+  [id*="xrayWorkspace" i],
+  [id*="rayWorkspace" i],
+  [class*="xray-workspace" i],
+  [class*="ray-workspace" i]
+) :is([class*="glow" i],[class*="halo" i]){
+  filter:none !important;
+  box-shadow:none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive behavior: keep the report a dense workstation, not a modal toy.
+   -------------------------------------------------------------------------- */
+@media (max-width:1100px){
+  .vx-sx-card{
+    width:calc(100vw - 20px);
+    height:calc(100vh - 20px);
+    grid-template-rows:auto 35px minmax(0,1fr);
+  }
+  .vx-sx-card header{gap:8px;align-items:flex-start}
+  .vx-sx-actions{flex-wrap:wrap;justify-content:flex-end}
+  .vx-sx-actions button{height:27px;padding:0 8px}
+}
+@media (max-width:720px){
+  .vx-sx-card header h2{font-size:11px}
+  .vx-sx-actions button:not(.primary):not(#vxSxClose){display:none}
+  .vx-sx-meta span{display:none}
+  #vxSxReport{font-size:calc(9px + 1pt);padding:11px}
+}

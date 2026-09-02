@@ -1,0 +1,89 @@
+/* VERTEX_WORKS_TYPOGRAPHY_PLUS1PT_000096: every explicit simple font-size in this file is +1pt */
+/* VERTEX WORKS 000082 — NATIVE RESTART CONTROL */
+.vw-restart-control {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  z-index: 2147482000;
+  pointer-events: none;
+}
+.vw-restart-control button {
+  pointer-events: auto;
+  width: 42px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  overflow: hidden;
+  padding: 0 10px;
+  border: 1px solid rgba(255,122,24,.28);
+  border-radius: 8px;
+  background: rgba(7,6,5,.92);
+  color: #9b8878;
+  box-shadow: 0 8px 26px rgba(0,0,0,.32), inset 0 0 0 1px rgba(255,173,85,.025);
+  cursor: pointer;
+  transition: width 140ms ease, border-color 140ms ease, color 140ms ease, background 140ms ease;
+  backdrop-filter: blur(10px);
+}
+.vw-restart-control button:hover,
+.vw-restart-control button:focus-visible {
+  width: 108px;
+  border-color: rgba(255,122,24,.62);
+  color: #ffc690;
+  background: rgba(255,122,24,.065);
+}
+.vw-restart-control button span {
+  flex: 0 0 auto;
+  width: 20px;
+  font-size: calc(18px + 1pt);
+  line-height: 1;
+  text-align: center;
+  color: #ff8b2d;
+}
+.vw-restart-control button b {
+  flex: 0 0 auto;
+  font-size: calc(8px + 1pt);
+  letter-spacing: .12em;
+  white-space: nowrap;
+}
+.vw-restart-control button[data-state="armed"] {
+  width: 108px;
+  border-color: rgba(255,179,78,.78);
+  background: rgba(255,142,35,.11);
+  color: #ffd2a6;
+}
+.vw-restart-control button[data-state="restarting"] {
+  width: 122px;
+  border-color: rgba(77,225,154,.56);
+  color: #70e8ac;
+}
+.vw-restart-control button[data-state="restarting"] span {
+  color: #70e8ac;
+  animation: vw-restart-spin .75s linear infinite;
+}
+.vw-restart-control button[data-state="error"] {
+  width: 108px;
+  border-color: rgba(255,100,100,.65);
+  color: #ff8a8a;
+}
+@keyframes vw-restart-spin {
+  to { transform: rotate(360deg); }
+}
+@media (max-width: 720px) {
+  .vw-restart-control {
+    left: 6px;
+    bottom: 6px;
+  }
+  .vw-restart-control button {
+    width: 36px;
+    height: 32px;
+    padding-inline: 7px;
+  }
+  .vw-restart-control button:hover,
+  .vw-restart-control button:focus-visible,
+  .vw-restart-control button[data-state="armed"],
+  .vw-restart-control button[data-state="restarting"],
+  .vw-restart-control button[data-state="error"] {
+    width: 94px;
+  }
+}

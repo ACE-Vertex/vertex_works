@@ -1,0 +1,143 @@
+/* VERTEX WORKS 000077 - VW ORANGE WORKSPACE
+   Product identity: VW / Orange
+   Dark manufacturing surface; orange is action/energy, not decoration.
+*/
+:root,
+:root[data-theme="vertex"],
+:root[data-product="VW"] {
+  --vertex-bg-deep: #050403;
+  --vertex-bg-shell: #080604;
+  --vertex-bg-panel: #0d0a07;
+  --vertex-bg-panel-raised: #15100b;
+  --vertex-bg-inset: #090603;
+  --vertex-bg-hover: #21150b;
+  --vertex-line: #342313;
+  --vertex-line-bright: #63401e;
+  --vertex-text: #e9e0d6;
+  --vertex-text-muted: #9e8d7d;
+  --vertex-text-faint: #62564a;
+  --vertex-accent: #ff7a18;
+  --vertex-accent-bright: #ffad55;
+  --vertex-accent-soft: #3a1c08;
+  --vertex-accent-rgb: 255, 122, 24;
+  --vertex-header-top: #171009;
+  --vertex-header-bottom: #0a0704;
+  --vertex-status-top: #311807;
+  --vertex-status-bottom: #1e0f05;
+
+  --blue: #ff7a18;
+  --blue-bright: #ffad55;
+  --blue-soft: #3a1c08;
+  --cyan: #ff7a18;
+  --cyan2: #ffad55;
+  --accent: #ff7a18;
+  --accent-rgb: 255, 122, 24;
+  --amber: #ff9a3d;
+}
+
+html, body {
+  min-width: 0;
+  background:
+    radial-gradient(circle at 52% -20%, rgba(255,122,24,.075), transparent 38%),
+    linear-gradient(180deg, #070503 0%, #030303 100%);
+}
+
+.vertex-mode-bar,
+.xray-topbar,
+.command-deck {
+  border-color: rgba(255,122,24,.22) !important;
+  background: linear-gradient(180deg, rgba(27,17,9,.96), rgba(8,6,4,.96)) !important;
+  box-shadow: 0 10px 32px rgba(0,0,0,.22);
+}
+
+.mode-brand img,
+.xray-brand img {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow:
+    0 0 0 1px rgba(255,173,85,.24),
+    0 0 20px rgba(255,122,24,.14);
+}
+
+.works-mark .vertex-project-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 9px;
+  object-fit: cover;
+  filter: none !important;
+}
+
+.mode-switch button.active,
+.rail-item.active,
+.xray-button.primary,
+.xray-chip.active {
+  border-color: rgba(255,122,24,.58) !important;
+  color: #ffd4ab !important;
+  background: linear-gradient(180deg, rgba(255,122,24,.18), rgba(100,45,8,.16)) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,173,85,.06),
+    0 0 18px rgba(255,122,24,.08) !important;
+}
+
+.mode-index,
+.xray-live,
+.works-online,
+.xray-state,
+.brand-block h1 span,
+.works-mark .mark-dot {
+  color: #ff9a3d !important;
+}
+
+.xray-live i,
+.works-mark .mark-dot {
+  background: #ff7a18 !important;
+  box-shadow: 0 0 12px rgba(255,122,24,.72) !important;
+}
+
+.xray-panel,
+.works-card,
+.metric-card,
+.terminal-log,
+.receiving-bay,
+.inspection-bay,
+.staging-bay,
+.evidence-bay,
+.return-lane {
+  border-color: rgba(255,122,24,.13) !important;
+}
+
+.xray-panel:hover,
+.works-card:hover {
+  border-color: rgba(255,122,24,.24) !important;
+}
+
+.legacy-language-hooks {
+  display: none !important;
+}
+
+.mode-brand,
+.mode-switch,
+.vertex-mode-bar,
+.xray-grid,
+.xray-panel,
+.works-shell,
+.works-main,
+.command-deck,
+.brand-block {
+  min-width: 0;
+}
+
+@media (max-width: 1700px) {
+  .mode-switch button em { display: none; }
+  .mode-switch button { min-width: 72px; }
+  .mode-brand strong { font-size: clamp(10px, .8vw, 13px); }
+}
+
+@media (max-width: 1280px) {
+  .vertex-mode-bar { gap: 8px; padding-inline: 8px; }
+  .mode-brand small { display: none; }
+  .xray-brand span { display: none; }
+  .command-deck { gap: 10px; }
+}

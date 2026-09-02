@@ -1,0 +1,13 @@
+# VERTEX WORKS VXN BROWSER 000089 - RUNTIME EVIDENCE GUIDE
+# Run Vertex Works, open the VXN facility, then use CLIP TO VERA.
+#
+# Expected evidence fields:
+# gpuPolicy.policy = INTEGRATED_PREFERRED
+# gpuPolicy.requestedPowerPreference = low-power
+# gpuPolicy.highPerformanceRequested = false
+# gpuPolicy.backend = WEBGPU_LOW_POWER | CANVAS2D_SOFTWARE
+# gpuPolicy.adapterClass = UNRESOLVED
+# gpuPolicy.adapterInfo = runtime adapter description when exposed by WebGPU
+#
+# The low-power request is a preference, not proof that Windows selected the iGPU.
+# Do not label the adapter as integrated until runtime/OS evidence proves it.

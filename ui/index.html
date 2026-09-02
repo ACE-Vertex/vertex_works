@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en" data-theme="vertex" data-product="VW" data-product-theme="orange">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VERTEX WORKS</title>
+  <link rel="stylesheet" href="vertex-theme.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="scoped-xray.css" />
+  <link rel="stylesheet" href="vertex-works-orange.css" />
+  <link rel="stylesheet" href="vertex-works-sensors.css" />
+  <link rel="stylesheet" href="vertex-works-factory-kernel.css" />
+  <link rel="stylesheet" href="vertex-works-restart.css" />
+  <link rel="stylesheet" href="vertex-works-ray-orange.css" />
+  <link rel="stylesheet" href="vertex-works-vxn-browser.css" />
+  <link rel="stylesheet" href="./vertex-works-flow-rack.css">
+  <link rel="stylesheet" href="./vertex-canonical-registry.css">
+  <link rel="stylesheet" href="./vertex-works-major-refinement-000026.css">
+</head>
+<body class="xray-mode">
+  <div class="works-atmosphere" aria-hidden="true">
+    <div class="beam beam-a"></div><div class="beam beam-b"></div><div class="beam beam-c"></div>
+    <div class="works-grid-bg"></div><div class="works-vignette"></div>
+  </div>
+
+  <header id="vertexModeBar" class="vertex-mode-bar">
+    <div class="mode-brand">
+      <img src="assets/brand/vertex-works-app-icon.png" alt="Vertex" />
+      <div><small>VERTEX WORKS</small><strong id="modeWorkspaceName">VERTEX RAY</strong></div>
+    </div>
+    <nav class="mode-switch" aria-label="Workspace switch">
+      <button id="rayNavBtn" class="active"><span class="mode-index">01</span><b>RAY</b><em data-i18n="nav.raySub">OBSERVE / COMPARE</em></button>
+      <button id="forgeNavBtn"><span class="mode-index">02</span><b>FORGE</b><em data-i18n="nav.forgeSub">RECEIVE / BUILD</em></button>
+    </nav>
+    <div class="mode-context"><span data-i18n="nav.flow">RAY ⇄ FORGE CONTINUITY</span><strong id="modeContextText" data-i18n="nav.rayContext">Project Intelligence / Blueprint</strong></div>
+    <button id="settingsBtn" class="settings-gear" aria-label="Settings" title="Settings">⚙</button>
+    <section id="settingsPanel" class="settings-panel hidden">
+      <div class="settings-head"><div><small>VERTEX SETTINGS</small><strong data-i18n="settings.title">DISPLAY</strong></div><button id="settingsCloseBtn">×</button></div>
+      <div class="settings-row"><div><b data-i18n="settings.language">INTERFACE LANGUAGE</b><span data-i18n="settings.languageHint">VERTEX WORKS runs English-only</span></div><div class="language-switch legacy-language-hooks" aria-hidden="true"><button id="langJaBtn" tabindex="-1">JA</button><button id="langEnBtn" tabindex="-1">EN</button></div></div>
+      <div class="settings-note" data-i18n="settings.local">Display settings are stored on this workstation.</div>
+    </section>
+  </header>
+
+  <section id="xrayWorkspace" class="xray-shell ray-v050">
+    <header class="xray-topbar">
+      <div class="xray-brand"><img src="assets/brand/vertex-works-app-icon.png" alt="Vertex"><div><small>VERTEX RAY</small><strong data-i18n="ray.title">PROJECT INTELLIGENCE</strong><span data-i18n="ray.subtitle">構造観測 · 比較 · Blueprint · Evidence Driven · Read Only</span></div></div>
+      <div class="ray-blueprint-legend">
+        <span class="legend dependency">DEPENDENCY</span><span class="legend runtime">RUNTIME</span><span class="legend correlation">CORRELATION</span><span class="legend superiority">SUPERIORITY</span><span class="legend lineage">LINEAGE</span>
+      </div>
+      <div class="xray-live"><i></i><span>LIVE</span><b id="xrayHealthTop">READY</b></div>
+    </header>
+
+    <div class="xray-grid">
+      <aside class="xray-panel xray-explorer">
+        <div class="xray-panel-head"><div><small>VERTEX PROJECT</small><h2 data-i18n="ray.explorer">プロジェクト・エクスプローラ</h2></div><button id="xrayScanBtn" class="xray-button primary" data-i18n="ray.scan">スキャン</button></div>
+        <div class="xray-root"><span>ROOT</span><strong id="xrayRoot">G:\Vertex_Project\Development</strong></div>
+        <div class="explorer-hint" data-i18n="ray.explorerHint">フォルダを展開してProjectの地層へ潜ります。Blueprint接続モードではProjectを2つ選択します。</div>
+        <div id="xrayModuleList" class="xray-module-list"><div class="xray-placeholder" data-i18n="ray.awaitScan">スキャン待機中</div></div>
+        <div class="xray-mini-summary"><div><span data-i18n="metric.folders">フォルダ</span><b id="xrayModuleCount">0</b></div><div><span data-i18n="metric.files">ファイル</span><b id="xrayFileCount">0</b></div><div><span data-i18n="metric.links">関係</span><b id="xrayEdgeCount">0</b></div></div>
+      </aside>
+
+      <main class="xray-center">
+        <section class="xray-panel xray-map-card blueprint-card">
+          <div class="xray-panel-head blueprint-head">
+            <div><small>FME LINEAGE / PROJECT BLUEPRINT</small><h2 data-i18n="blueprint.title">Project Blueprint</h2></div>
+            <div class="blueprint-toolbar">
+              <button id="blueprintAddRelationBtn" class="xray-button relation-add" data-i18n="blueprint.addRelation">＋ 関係追加</button>
+              <button id="xrayAllBtn" class="xray-chip active" data-relfilter="ALL">ALL</button>
+              <button id="xrayDepsBtn" class="xray-chip" data-relfilter="DEPENDENCY">DEPENDENCY</button>
+              <button class="xray-chip" data-relfilter="RUNTIME">RUNTIME</button>
+              <button class="xray-chip" data-relfilter="CORRELATION">CORRELATION</button>
+              <button class="xray-chip" data-relfilter="SUPERIORITY">SUPERIORITY</button>
+              <button class="xray-chip" data-relfilter="LINEAGE">LINEAGE</button>
+            </div>
+          </div>
+          <div id="blueprintLinkNotice" class="blueprint-link-notice hidden"><b data-i18n="blueprint.linkMode">関係追加モード</b><span id="blueprintLinkStatus" data-i18n="blueprint.pickSource">接続元Projectを選択</span><button id="blueprintCancelLinkBtn">×</button></div>
+          <div id="xrayMap" class="xray-map blueprint-map"><div class="xray-core-placeholder"><i></i><strong>VERTEX PROJECT</strong><span data-i18n="ray.awaitScan">スキャン待機中</span></div></div>
+        </section>
+        <section class="xray-analysis-row">
+          <article class="xray-panel xray-stat"><small data-i18n="metric.health">構造ヘルス</small><div class="xray-ring"><b id="xrayHealth">—</b><span>HEALTH</span></div></article>
+          <article class="xray-panel xray-stat"><small data-i18n="metric.risk">リスク分析</small><div class="xray-risk"><b id="xrayRisk">0</b><span>LOW</span></div><div class="xray-meter"><i id="xrayRiskBar"></i></div></article>
+          <article class="xray-panel xray-stat wide"><small data-i18n="metric.analysis">分析結果</small><div class="xray-result-grid"><div><span data-i18n="metric.components">コンポーネント</span><b id="xrayRecognized">0</b></div><div><span data-i18n="metric.directories">ディレクトリ</span><b id="xrayObserved">0</b></div><div><span data-i18n="metric.scanned">走査容量</span><b id="xrayBytes">0 MB</b></div></div></article>
+        </section>
+      </main>
+
+      <aside class="xray-panel xray-report ray-inspector-column">
+        <section class="relation-inspector">
+          <div class="xray-panel-head"><div><small>BLUEPRINT RELATION INSPECTOR</small><h2 data-i18n="relation.title">関係インスペクタ</h2></div><span id="relationModeChip" class="xray-state">IDLE</span></div>
+          <div id="relationEmpty" class="relation-empty"><div class="relation-orbit"><i></i><i></i></div><strong data-i18n="relation.emptyTitle">関係線の中点を選択</strong><span data-i18n="relation.emptyHint">依存性・相関性・優位性・系譜などを細かく観測注釈できます。</span></div>
+          <form id="relationEditor" class="relation-editor hidden" onsubmit="return false;">
+            <div class="relation-endpoints"><div><small>FROM</small><b id="relationFrom">—</b></div><span>→</span><div><small>TO</small><b id="relationTo">—</b></div></div>
+            <label><span data-i18n="relation.type">関係タイプ</span><select id="relationType"><option>DEPENDENCY</option><option>RUNTIME</option><option>CORRELATION</option><option>SUPERIORITY</option><option>LINEAGE</option><option>RELATED</option></select></label>
+            <div class="relation-slider"><div><span data-i18n="relation.strength">関係強度</span><b id="relationStrengthValue">70</b></div><input id="relationStrength" type="range" min="0" max="100" value="70"></div>
+            <div class="relation-slider"><div><span data-i18n="relation.confidence">確信度</span><b id="relationConfidenceValue">70</b></div><input id="relationConfidence" type="range" min="0" max="100" value="70"></div>
+            <label><span data-i18n="relation.dependency">依存レベル</span><select id="relationDependency"><option value="NONE">NONE</option><option value="SOFT">SOFT</option><option value="NORMAL" selected>NORMAL</option><option value="HARD">HARD</option><option value="CRITICAL">CRITICAL</option></select></label>
+            <div class="relation-slider"><div><span data-i18n="relation.correlation">相関スコア</span><b id="relationCorrelationValue">0</b></div><input id="relationCorrelation" type="range" min="-100" max="100" value="0"></div>
+            <div class="relation-slider superiority-slider"><div><span data-i18n="relation.superiority">優位性 A ⇄ B</span><b id="relationSuperiorityValue">0</b></div><input id="relationSuperiority" type="range" min="-100" max="100" value="0"></div>
+            <label><span data-i18n="relation.note">観測メモ</span><textarea id="relationNote" rows="3" data-i18n-placeholder="relation.notePlaceholder" placeholder="根拠・用途・比較観点"></textarea></label>
+            <div class="relation-evidence"><span data-i18n="relation.source">SOURCE</span><b id="relationSourceTag">X-RAY</b><em data-i18n="relation.localOnly">Blueprint注釈はProject Sourceを変更しません</em></div>
+            <div class="relation-actions"><button id="relationSaveBtn" class="xray-button primary" data-i18n="relation.save">注釈を保存</button><button id="relationDeleteBtn" class="xray-button danger" data-i18n="relation.delete">注釈を削除</button></div>
+          </form>
+        </section>
+        <section class="ray-findings-section">
+          <div class="xray-panel-head"><div><small>RAY REPORT CENTER</small><h2 data-i18n="ray.findings">分析結果</h2></div><span id="xrayReportState" class="xray-state">IDLE</span></div>
+          <div id="xrayFindings" class="xray-findings"><div class="xray-placeholder" data-i18n="ray.noFindings">成功・エラー・分析結果をここに表示します。</div></div>
+          <div class="xray-report-preview"><small data-i18n="ray.reportPreview">レポートプレビュー</small><pre id="xrayReportPreview">No report generated.</pre></div>
+          <div class="xray-report-actions"><button id="xrayClipBtn" class="xray-button clip" disabled><span>⎘</span> CLIP TO VERA</button><button id="xrayCopyJsonBtn" class="xray-button" disabled>JSON</button></div>
+        </section>
+      </aside>
+    </div>
+    <footer class="xray-outcome-lane"><div class="outcome success"><small>SUCCESS</small><strong id="xraySuccessCount">0</strong><span data-i18n="outcome.success">認識 / 健全</span></div><div class="outcome error"><small>ERROR</small><strong id="xrayErrorCount">0</strong><span data-i18n="outcome.error">読取 / 分析失敗</span></div><div class="outcome analysis"><small>ANALYSIS</small><strong id="xrayAnalysisCount">0</strong><span data-i18n="outcome.analysis">所見 / 観測</span></div><div class="xray-statusline"><span id="xrayStatus">READY — Project remains untouched.</span><b id="xrayTimestamp">—</b></div></footer>
+  </section>
+
+<main id="forgeWorkspace" class="works-shell workspace-hidden">
+    <aside class="works-rail">
+      <div class="works-mark" title="VERTEX Project">
+        <img class="vertex-project-mark" src="assets/brand/vertex-works-app-icon.png" alt="VERTEX Project" />
+        <span class="mark-dot"></span>
+      </div>
+
+      <nav class="rail-nav">
+        <button class="rail-item active" data-jump="receivingBay"><span>01</span><b>RECV</b></button>
+        <button class="rail-item" data-jump="inspectionBay"><span>02</span><b>INSP</b></button>
+        <button class="rail-item" data-jump="foundryBay"><span>03</span><b>FNDR</b></button>
+        <button class="rail-item" data-jump="evidenceBay"><span>04</span><b>EVID</b></button>
+        <button class="rail-item" data-jump="returnLane"><span>05</span><b>RCVY</b></button>
+      </nav>
+
+      <div class="rail-foot">
+        <span class="rail-pulse"></span>
+        <small>WORKS<br/>0.5</small>
+      </div>
+    </aside>
+
+    <section class="works-main">
+      <header class="command-deck">
+        <div class="brand-block">
+          <div class="eyebrow">ARTIFACT ENGINEERING · VERIFICATION · DISPATCH</div>
+          <h1>VERTEX <span>WORKS</span></h1>
+          <p>受信 → 検査 → 鍛造 → 検証 → Evidence → ディスパッチ</p>
+        </div>
+
+        <div class="deck-status">
+          <div id="shellActivity" class="shell-activity hidden">
+            <span class="activity-rings" aria-hidden="true"><i></i><i></i><i></i></span>
+            <div class="shell-copy">
+              <small>VERTEX SHELL</small>
+              <strong id="shellActivityText">ACTIVE</strong>
+            </div>
+            <span id="shellElapsed" class="shell-elapsed">00:00</span>
+          </div>
+          <div id="liveBadge" class="works-online">BOOTING</div>
+        </div>
+      </header>
+
+      <section class="works-metrics">
+        <article class="metric-card">
+          <small data-i18n="forge.receiving">受信</small>
+          <strong id="incomingCount" class="count-value">0</strong>
+          <span data-i18n="forge.incomingArtifacts">受信アーティファクト</span>
+        </article>
+        <article class="metric-card">
+          <small data-i18n="forge.ready">準備完了</small>
+          <strong id="readyCount" class="count-value">0</strong>
+          <span data-i18n="forge.validatedWaiting">検証済み / 待機</span>
+        </article>
+        <article class="metric-card">
+          <small data-i18n="forge.verified">検証完了</small>
+          <strong id="verifiedCount" class="count-value">0</strong>
+          <span data-i18n="forge.completedArtifacts">完了アーティファクト</span>
+        </article>
+        <article class="metric-card attention-card">
+          <small data-i18n="forge.attention">要確認</small>
+          <strong id="attentionCount" class="count-value">0</strong>
+          <span data-i18n="forge.invalidFailed">不正 / 検証失敗</span>
+        </article>
+        <article class="metric-wide">
+          <small data-i18n="forge.receivingBay">受信ベイ</small>
+          <strong id="inbox">—</strong>
+        </article>
+        <article class="metric-wide">
+          <small data-i18n="forge.productionRoot">許可済みProduction Root</small>
+          <strong id="allowedRoot">—</strong>
+        </article>
+      </section>
+
+      <section class="works-floor">
+        <section id="receivingBay" class="works-panel receiving-panel">
+          <div class="panel-glow"></div>
+          <div class="panel-title">
+            <div>
+              <small data-i18n="forge.receivingBayStep">01 / 受信ベイ</small>
+              <h2 data-i18n="forge.incomingCargo">受信アーティファクト</h2>
+            </div>
+            <div class="incoming-tools">
+              <div class="sort-switch">
+                <button id="sortNameBtn" class="sort-btn specular active" type="button">名前</button>
+                <button id="sortGenreBtn" class="sort-btn specular" type="button">種別</button>
+              </div>
+              <button id="refreshBtn" class="specular utility-btn">更新</button>
+            </div>
+          </div>
+          <div class="list-fade list-fade-top"></div>
+          <div id="artifactList" class="artifact-list gradual-list"></div>
+          <div class="list-fade list-fade-bottom"></div>
+        </section>
+
+        <section id="inspectionBay" class="works-panel inspection-panel">
+          <div class="panel-glow"></div>
+          <div class="panel-title">
+            <div>
+              <small data-i18n="forge.inspectionStep">02 / 検査 + HUMAN GATE</small>
+              <h2 data-i18n="forge.inspector">アーティファクト・インスペクタ</h2>
+            </div>
+            <span id="artifactState" class="state-chip">NO SELECTION</span>
+          </div>
+
+          <div id="emptyState" class="empty-state">
+            <div class="empty-orbit"><i></i><i></i><i></i><b>VRA</b></div>
+            <strong data-i18n="forge.selectCargo">受信アーティファクトを選択</strong>
+            <span>Receiving BayからVRAを選択すると Manifest / SHA / Authority を検査します。</span>
+          </div>
+
+          <div id="details" class="details hidden">
+            <div class="inspection-grid">
+              <div class="kv"><span>ID</span><strong id="artifactId"></strong></div>
+              <div class="kv"><span>TITLE</span><strong id="artifactTitle"></strong></div>
+              <div class="kv"><span>SOURCE</span><strong id="artifactSource"></strong></div>
+              <div class="kv"><span>TARGET</span><strong id="artifactTarget"></strong></div>
+              <div class="kv"><span>AUTHORITY</span><strong id="artifactAuthority"></strong></div>
+              <div class="kv"><span>PAYLOAD</span><strong id="artifactPayload"></strong></div>
+            </div>
+
+            <div id="validationBox" class="validation"></div>
+
+            <div class="actions">
+              <button id="stageBtn" class="action-btn specular secondary" data-i18n="forge.stage">ステージ</button>
+              <button id="applyBtn" class="action-btn specular primary" disabled data-i18n="forge.apply">適用 / FORGE</button>
+              <button id="rollbackBtn" class="action-btn specular danger" disabled data-i18n="forge.rollback">ロールバック</button>
+            </div>
+
+            <div id="returnLane" class="return-lane hidden">
+              <div class="return-orbit"><i></i></div>
+              <div class="return-copy">
+                <small data-i18n="forge.returnLane">RECOVERY / RETURN LANE</small>
+                <strong id="returnLaneState">READY</strong>
+              </div>
+              <button id="errorReportBtn" class="copy-error specular hidden" data-i18n="forge.errorReport">エラーレポート</button>
+              <button id="evidenceCopyBtn" class="copy-evidence specular hidden" data-i18n="forge.copyEvidence">Evidenceをコピー</button>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="works-lower">
+        <section id="foundryBay" class="works-panel terminal-panel">
+          <div class="panel-title">
+            <div>
+              <small data-i18n="forge.foundry">03 / FOUNDRY STREAM</small>
+              <h2>Vertex Shell <span id="shellCommandState" class="shell-command-state">STANDBY</span></h2>
+            </div>
+            <button id="clearTerminalBtn" class="specular utility-btn" data-i18n="common.clear">クリア</button>
+          </div>
+          <div id="terminalLog" class="terminal-log">
+            <div class="terminal-line system">VERTEX WORKS FOUNDRY READY — real verification stream</div>
+          </div>
+        </section>
+
+        <section id="evidenceBay" class="works-panel evidence-panel">
+          <div class="panel-title">
+            <div>
+              <small data-i18n="forge.evidenceVault">04 / EVIDENCE VAULT</small>
+              <h2 data-i18n="forge.ledger">Works Ledger</h2>
+            </div>
+            <button id="clearBtn" class="specular utility-btn" data-i18n="common.clear">クリア</button>
+          </div>
+          <pre id="log"></pre>
+        </section>
+      </section>
+
+      <footer class="works-dock">
+        <div class="dock-stage active"><i></i><span>RECEIVE</span></div><div class="dock-link"></div>
+        <div class="dock-stage"><i></i><span>INSPECT</span></div><div class="dock-link"></div>
+        <div class="dock-stage"><i></i><span>STAGE</span></div><div class="dock-link"></div>
+        <div class="dock-stage"><i></i><span>BACKUP</span></div><div class="dock-link"></div>
+        <div class="dock-stage"><i></i><span>FORGE</span></div><div class="dock-link"></div>
+        <div class="dock-stage"><i></i><span>VERIFY</span></div><div class="dock-link"></div>
+        <div class="dock-stage"><i></i><span>EVIDENCE</span></div><div class="dock-link"></div>
+        <div class="dock-stage"><i></i><span>DISPATCH</span></div>
+        <div class="dock-version">0.5.0</div>
+      </footer>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="scoped-xray.js"></script>
+
+  <script id="vertexWorksEnglishLock077">
+  (() => {
+    const lockEnglish = () => {
+      document.documentElement.lang = "en";
+      document.documentElement.dataset.product = "VW";
+      document.documentElement.dataset.productTheme = "orange";
+      const en = document.getElementById("langEnBtn");
+      if (en && !en.dataset.vwEnglishLocked) {
+        en.dataset.vwEnglishLocked = "1";
+        try { en.click(); } catch (_) {}
+      }
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener(
+        "DOMContentLoaded",
+        () => requestAnimationFrame(lockEnglish),
+        { once: true }
+      );
+    } else {
+      requestAnimationFrame(lockEnglish);
+    }
+  })();
+  </script>
+
+  <script src="vertex-works-sensors.js"></script>
+  <script src="vertex-works-factory-kernel.js"></script>
+  <script src="vertex-works-restart.js"></script>
+  <script src="vertex-works-ray-contract.js"></script>
+  <script src="vertex-works-vxn-browser.js"></script>
+  <script src="./vertex-works-flow-rack.js" defer></script>
+  <script src="./vertex-works-flow-rack-live.js" defer></script>
+  <script src="./vertex-works-flow-rack-runtime-proof.js" defer></script>
+  <script src="./vertex-canonical-registry.js" defer></script>
+  <script src="./vertex-works-major-refinement-000026.js" defer></script>
+</body>
+</html>

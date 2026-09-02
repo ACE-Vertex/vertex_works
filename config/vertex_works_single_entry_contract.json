@@ -1,0 +1,11 @@
+{
+  "schema": "vertex-works/single-entry-contract/1",
+  "project_root": "G:\\Vertex_Project\\Development\\vertex_works",
+  "visible_entry": "VertexWorks.exe",
+  "visible_entry_count": 1,
+  "entry_role": "FIXED_LAUNCHER",
+  "active_pointer": "current.json::release_exe",
+  "versioned_root_executables": "FORBIDDEN",
+  "immutable_history": true,
+  "transactional_migration": true
+}

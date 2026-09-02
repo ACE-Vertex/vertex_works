@@ -1,0 +1,8 @@
+from pathlib import Path
+import json
+R=Path(r"G:\Vertex_Project\Development\vertex_works");U=R/"ui";I=U/"index.html";J=U/"vertex-works-vxn-browser.js";C=U/"vertex-works-vxn-browser.css";CUR=R/"current.json";ENTRY=R/"VertexWorks.exe"
+def q(k,v):print(f"{k}={'PASS' if v else 'FAIL'}");return v
+i=I.read_text(encoding="utf-8",errors="replace") if I.exists() else "";j=J.read_text(encoding="utf-8",errors="replace") if J.exists() else "";c=C.read_text(encoding="utf-8",errors="replace") if C.exists() else "";cur=json.loads(CUR.read_text(encoding="utf-8")) if CUR.exists() else {};v=cur.get("vxn_browser") or {};rv=cur.get("release_exe") or "";rel=Path(rv) if rv else Path("__missing__")
+x=[q("ENTRY",ENTRY.exists()),q("JS",J.exists()),q("CSS",C.exists()),q("LINKS","vertex-works-vxn-browser.js" in i and "vertex-works-vxn-browser.css" in i),q("NAV",'dataset.facility="VXN"' in j),q("OPEN",'id="vwVxnOpenA"' in j and 'id="vwVxnOpenB"' in j),q("MODES",all(a in j for a in ['data-mode="HEX"','data-mode="UTF8"','data-mode="STRINGS"','data-mode="DIFF"'])),q("SHA",'crypto.subtle.digest("SHA-256"' in j),q("DIFF","async function runDiff()" in j),q("VERA","CLIP TO VERA" in j),q("RAW",'semanticDecoder:"UNRESOLVED"' in j),q("CURRENT",v.get("version")=="000088" and v.get("truth_mode")=="RAW" and v.get("fake_semantics") is False),q("RELEASE",rel.exists()),q("IMMUTABLE","\\versions\\0.5.0\\builds\\" in str(rel).lower())]
+if not all(x):raise SystemExit("VXN_BROWSER_088_VERIFY FAIL")
+print("VXN_BROWSER_FOUNDATION=PASS");print("SEMANTIC_DECODER=UNRESOLVED");print("VERTEX_WORKS_VXN_BROWSER_088_VERIFY PASS")

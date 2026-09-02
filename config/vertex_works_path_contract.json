@@ -1,0 +1,9 @@
+{
+  "schema": "vertex-works/path-contract/1",
+  "source_root": "G:\\Vertex_Project\\Development\\vertex_works",
+  "development_root": "G:\\Vertex_Project\\Development",
+  "receiving_bay": "G:\\Vertex_Project\\Development\\_incoming",
+  "legacy_receiving_bay": "G:\\Vertex_Project\\_incoming\\vertex_works",
+  "build_cache_policy": "CLEAN_ON_SOURCE_ROOT_RELOCATION",
+  "restart_policy": "AFTER_VERIFIED"
+}

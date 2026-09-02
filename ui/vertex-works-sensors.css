@@ -1,0 +1,346 @@
+/* VERTEX_WORKS_TYPOGRAPHY_PLUS1PT_000096: every explicit simple font-size in this file is +1pt */
+/* VERTEX WORKS 000080 — SENSOR BUS / TOPBAR INTEGRATION */
+
+.vertex-mode-bar {
+  position: relative;
+  overflow: visible !important;
+}
+
+.vw-sensor-dock {
+  position: relative;
+  z-index: 5000;
+  flex: 0 0 auto;
+  margin-left: auto;
+  margin-right: 8px;
+  font-family: Inter, "Segoe UI", system-ui, sans-serif;
+  color: #e9e0d6;
+}
+
+.vw-sensor-toggle {
+  height: 28px;
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7px;
+  padding: 0 9px;
+  border: 1px solid rgba(255,122,24,.30);
+  border-radius: 7px;
+  background: rgba(8,6,4,.82);
+  color: #d9c9ba;
+  box-shadow: inset 0 0 0 1px rgba(255,173,85,.025);
+  cursor: pointer;
+}
+
+.vw-sensor-toggle:hover {
+  border-color: rgba(255,122,24,.58);
+  background: rgba(255,122,24,.05);
+}
+
+.vw-sensor-toggle b {
+  font-size: calc(9px + 1pt);
+  letter-spacing: .13em;
+  color: #ffad55;
+}
+
+.vw-sensor-toggle em {
+  margin-left: auto;
+  font-size: calc(8px + 1pt);
+  font-style: normal;
+  color: #8d7d6e;
+}
+
+.vw-sensor-toggle strong {
+  min-width: 34px;
+  font-size: calc(8px + 1pt);
+  text-align: center;
+  letter-spacing: .08em;
+}
+
+.vw-sensor-toggle strong[data-verdict="PASS"] { color: #4de19a; }
+.vw-sensor-toggle strong[data-verdict="FAIL"] { color: #ff6464; }
+.vw-sensor-toggle strong[data-verdict="IDLE"] { color: #ff9a3d; }
+
+.vw-sensor-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7a18;
+  box-shadow: 0 0 9px rgba(255,122,24,.78);
+}
+
+.vw-sensor-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 9px);
+  width: min(460px, calc(100vw - 28px));
+  max-height: min(620px, calc(100vh - 80px));
+  display: none;
+  overflow: hidden;
+  border: 1px solid rgba(255,122,24,.28);
+  border-radius: 11px;
+  background:
+    radial-gradient(circle at 100% 0, rgba(255,122,24,.07), transparent 35%),
+    rgba(7,6,5,.985);
+  box-shadow: 0 22px 70px rgba(0,0,0,.58);
+  backdrop-filter: blur(16px);
+}
+
+.vw-sensor-panel.open {
+  display: block;
+}
+
+.vw-sensor-panel > header {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255,122,24,.16);
+  background: linear-gradient(180deg, rgba(255,122,24,.06), transparent);
+}
+
+.vw-sensor-panel > header div {
+  min-width: 0;
+}
+
+.vw-sensor-panel > header small,
+.vw-inspection-head small {
+  display: block;
+  font-size: calc(8px + 1pt);
+  letter-spacing: .16em;
+  color: #8b7766;
+}
+
+.vw-sensor-panel > header h3 {
+  margin: 2px 0 0;
+  font-size: calc(15px + 1pt);
+  letter-spacing: .08em;
+  color: #f2e8de;
+}
+
+.vw-sensor-panel > header h3 span {
+  color: #ff7a18;
+  font-size: calc(10px + 1pt);
+}
+
+.vw-sensor-panel > header button {
+  margin-left: auto;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(255,122,24,.18);
+  border-radius: 7px;
+  background: #0b0806;
+  color: #9d8b7b;
+  cursor: pointer;
+}
+
+.vw-runtime-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 7px;
+  padding: 10px 12px;
+}
+
+.vw-runtime-grid article {
+  min-width: 0;
+  padding: 8px 9px;
+  border: 1px solid rgba(255,122,24,.12);
+  border-radius: 8px;
+  background: #0b0907;
+}
+
+.vw-runtime-grid small {
+  display: block;
+  color: #745f4e;
+  font-size: calc(8px + 1pt);
+  letter-spacing: .12em;
+}
+
+.vw-runtime-grid b {
+  display: block;
+  margin-top: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #e4d6ca;
+  font-size: calc(12px + 1pt);
+}
+
+.vw-inspection-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-top: 1px solid rgba(255,122,24,.1);
+  border-bottom: 1px solid rgba(255,122,24,.1);
+}
+
+.vw-inspection-head > div:first-child {
+  min-width: 0;
+}
+
+.vw-inspection-head strong {
+  display: block;
+  margin-top: 2px;
+  font-size: calc(8px + 1pt);
+  font-weight: 500;
+  color: #6d6157;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vw-inspection-head > div:last-child {
+  margin-left: auto;
+  display: flex;
+  gap: 6px;
+}
+
+.vw-inspection-head button {
+  min-height: 26px;
+  padding: 0 9px;
+  border: 1px solid rgba(255,122,24,.28);
+  border-radius: 6px;
+  background: rgba(255,122,24,.07);
+  color: #d5b99f;
+  font-size: calc(8px + 1pt);
+  font-weight: 700;
+  letter-spacing: .08em;
+  cursor: pointer;
+}
+
+.vw-inspection-head button:hover {
+  border-color: rgba(255,122,24,.58);
+  color: #ffd0a4;
+}
+
+.vw-inspection-list {
+  max-height: 350px;
+  overflow: auto;
+  padding: 7px 12px 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #543319 #0a0806;
+}
+
+.vw-inspection-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 42px;
+  gap: 4px 8px;
+  align-items: center;
+  padding: 7px 8px;
+  margin-top: 5px;
+  border: 1px solid rgba(255,255,255,.05);
+  border-radius: 7px;
+  background: rgba(255,255,255,.015);
+}
+
+.vw-inspection-row b {
+  min-width: 0;
+  font-size: calc(9px + 1pt);
+  letter-spacing: .04em;
+  color: #bcae9f;
+}
+
+.vw-inspection-row span {
+  justify-self: end;
+  font-size: calc(8px + 1pt);
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.vw-inspection-row em {
+  grid-column: 1 / -1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: calc(8px + 1pt);
+  line-height: 1.35;
+  font-style: normal;
+  color: #685e55;
+}
+
+.vw-inspection-row.pass {
+  border-left: 2px solid rgba(77,225,154,.65);
+}
+
+.vw-inspection-row.pass span {
+  color: #4de19a;
+}
+
+.vw-inspection-row.fail {
+  border-left: 2px solid rgba(255,100,100,.75);
+  background: rgba(255,80,80,.025);
+}
+
+.vw-inspection-row.fail span {
+  color: #ff6464;
+}
+
+.vw-inspection-empty {
+  padding: 18px 8px;
+  color: #6d6157;
+  font-size: calc(9px + 1pt);
+  text-align: center;
+}
+
+.vw-sensor-panel > footer {
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 12px;
+  border-top: 1px solid rgba(255,122,24,.1);
+  color: #59493c;
+  font-size: calc(7px + 1pt);
+  letter-spacing: .11em;
+}
+
+.vw-sensor-panel > footer span:last-child {
+  margin-left: auto;
+}
+
+/* Product requirement: the Sensor Bus must never occupy the lower-right work surface
+   where CLIP TO VERA and other task actions live. */
+body > .vw-sensor-dock {
+  display: none !important;
+}
+
+@media (max-width: 1500px) {
+  .vw-sensor-toggle {
+    min-width: 118px;
+  }
+
+  .vw-sensor-toggle b {
+    display: none;
+  }
+}
+
+@media (max-width: 1050px) {
+  .vw-sensor-toggle {
+    min-width: 82px;
+    padding-inline: 7px;
+  }
+
+  .vw-sensor-toggle em {
+    display: none;
+  }
+
+  .vw-sensor-panel {
+    right: -36px;
+  }
+}
+
+@media (max-width: 720px) {
+  .vw-runtime-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vw-inspection-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .vw-inspection-head > div:last-child {
+    margin-left: 0;
+  }
+}
