@@ -1,9 +1,6 @@
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
-use std::{
-    fs,
-    path::PathBuf,
-};
+use std::{fs, path::PathBuf};
 
 const REGISTRY_ROOT: &str = r"G:\Vertex_Project\Development\vertex_canonical_registry";
 
